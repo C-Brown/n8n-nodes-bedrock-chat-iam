@@ -66,6 +66,14 @@ export class BedrockChatIAM implements INodeType {
 				requiresDataPath: 'single',
 			},
 			{
+				displayName: "AWS Region",
+				name: 'region',
+				type: 'string',
+				default: 'us-east-1',
+				placeholder: 'us-east-1',
+				description: "Enter the AWS Region to use"
+			}
+			{
 				displayName: 'Options',
 				name: 'options',
 				placeholder: 'Add Option',
@@ -96,13 +104,6 @@ export class BedrockChatIAM implements INodeType {
 						typeOptions: { minValue: 0, maxValue: 1 },
 						default: 0.9,
 						description: 'Nucleus sampling (0-1). Leave default for typical behavior.',
-					},
-					{
-						displayName: 'Region',
-						name: 'region',
-						type: 'string',
-						default: 'us-east-1',
-						description: 'AWS region for Bedrock',
 					}
 				],
 			},
