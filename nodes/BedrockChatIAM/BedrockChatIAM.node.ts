@@ -111,7 +111,7 @@ export class BedrockChatIAM implements INodeType {
 
 	async supplyData(this: ISupplyDataFunctions, itemIndex: number): Promise<SupplyData> {
 		//const credentials = await this.getCredentials('aws');
-		const modelName = this.getNodeParameter('model', itemIndex) as string;
+		const modelName = this.getNodeParameter('modelId', itemIndex) as string;
 		const region = this.getNodeParameter('region', itemIndex) as string;
 		const options = this.getNodeParameter('options', itemIndex, {}) as {
 			temperature: number;
