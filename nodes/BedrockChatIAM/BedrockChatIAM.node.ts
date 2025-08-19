@@ -72,7 +72,7 @@ export class BedrockChatIAM implements INodeType {
 				default: 'us-east-1',
 				placeholder: 'us-east-1',
 				description: "Enter the AWS Region to use"
-			}
+			},
 			{
 				displayName: 'Options',
 				name: 'options',
