@@ -1,0 +1,64 @@
+{
+  "name": "n8n-nodes-bedrock-chat-iam",
+  "version": "0.1.0",
+  "description": "",
+  "keywords": [
+    "n8n-community-node-package"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "author": {
+    "name": "Cameron Brown",
+    "email": "pwoertf@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/C-Brown/n8n-nodes-bedrock-chat-iam.git"
+  },
+  "engines": {
+    "node": ">=20.15"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npx rimraf dist && tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lint": "eslint nodes credentials package.json",
+    "lintfix": "eslint nodes credentials package.json --fix",
+    "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [],
+    "nodes": [
+      "dist/nodes/BedrockChatIAM/BedrockChatIAM.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "~8.32.0",
+    "@types/proxy-from-env": "*",
+    "@types/lodash": "*",
+    "eslint": "^9.33.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.3",
+    "gulp": "^5.0.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@langchain/aws": "0.1.11",
+    "@langchain/community": "0.3.50",
+    "@langchain/core": "0.3.70",
+    "js-tiktoken": "^1.0.12",
+    "langchain": "0.3.30",
+    "lodash": "4.17.21",
+    "proxy-from-env": "^1.1.0",
+    "undici": "^6.21.0",
+    "zod": "4.0.17"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
